@@ -57,6 +57,12 @@ namespace Vjezba.Model
                         .Where(s => !s.JMBAG.StartsWith("0246") && s.Prezime.StartsWith("D"))
                         .ToList();
         }
+        public List<Student> DohvatiStudente91List()
+        {
+            return Osobe.OfType<Student>()
+                        .Where(s => s.DatumRodjenja.Year > 1991)
+                        .ToList();
+        }
         
     }
 }
