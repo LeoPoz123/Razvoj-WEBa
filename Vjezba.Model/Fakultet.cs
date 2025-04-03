@@ -70,6 +70,12 @@ namespace Vjezba.Model
                         .OrderByDescending(s => s.Prosjek)
                         .FirstOrDefault();
         }
+        public IEnumerable<Student> StudentiGodinaOrdered(int god)
+        {
+            return Osobe.OfType<Student>()
+                        .Where(s => s.DatumRodjenja.Year == god)
+                        .OrderByDescending(s => s.Prosjek);
+        }
         
     }
 }
