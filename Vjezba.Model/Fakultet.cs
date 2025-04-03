@@ -96,6 +96,12 @@ namespace Vjezba.Model
             return Osobe.OfType<Profesor>()
                         .Count(p => p.Zvanje == zvanje);
         }
+        public IEnumerable<Profesor> NeaktivniProfesori(int x)
+        {
+            return Osobe.OfType<Profesor>()
+                        .Where(p => (p.Zvanje == Zvanje.Predavac || p.Zvanje == Zvanje.VisiPredavac)
+                                    && p.Predmeti.Count < x);
+        }
         
     }
 }
