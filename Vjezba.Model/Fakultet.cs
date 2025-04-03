@@ -76,6 +76,21 @@ namespace Vjezba.Model
                         .Where(s => s.DatumRodjenja.Year == god)
                         .OrderByDescending(s => s.Prosjek);
         }
+        public IEnumerable<Profesor> SviProfesori(bool asc)
+        {
+            if (asc)
+            {
+                return Osobe.OfType<Profesor>()
+                            .OrderBy(p => p.Prezime)
+                            .ThenBy(p => p.Ime);
+            }
+            else
+            {
+                return Osobe.OfType<Profesor>()
+                            .OrderByDescending(p => p.Prezime)
+                            .ThenByDescending(p => p.Ime);
+            }
+        }
         
     }
 }
