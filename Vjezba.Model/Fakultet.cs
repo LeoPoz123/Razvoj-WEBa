@@ -51,6 +51,12 @@ namespace Vjezba.Model
             }
             return studenti91;
         }
+        public List<Student> StudentiNeTvzD()
+        {
+            return Osobe.OfType<Student>()
+                        .Where(s => !s.JMBAG.StartsWith("0246") && s.Prezime.StartsWith("D"))
+                        .ToList();
+        }
         
     }
 }
