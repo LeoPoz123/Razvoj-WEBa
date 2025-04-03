@@ -28,5 +28,11 @@ namespace Vjezba.Model
             return Osobe.OfType<Student>()
                         .FirstOrDefault(s => s.JMBAG == jmbag);
         }
+        public IEnumerable<Profesor> DohvatiProfesore()
+        {
+            return Osobe.OfType<Profesor>()
+                        .OrderBy(p => p.DatumIzbora);
+        }
+        
     }
 }
