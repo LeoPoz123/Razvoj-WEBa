@@ -1,6 +1,7 @@
 
 
 using System;
+using System.Collections.Generic;
 
 namespace Vjezba.Model
 {
@@ -9,7 +10,8 @@ namespace Vjezba.Model
         public string Odjel { get; set; }
         public Zvanje Zvanje { get; set; }
         public DateTime DatumIzbora { get; set; }
-
+        public List<Predmet> Predmeti { get; set; } = new List<Predmet>();
+        
         public int KolikoDoReizbora()
         {
             int godinaDoReizbora = Zvanje == Zvanje.Asistent ? 4 : 5;
