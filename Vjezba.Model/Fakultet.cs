@@ -33,6 +33,24 @@ namespace Vjezba.Model
             return Osobe.OfType<Profesor>()
                         .OrderBy(p => p.DatumIzbora);
         }
+        public IEnumerable<Student> DohvatiStudente91()
+        {
+            return Osobe.OfType<Student>()
+                        .Where(s => s.DatumRodjenja.Year > 1991);
+        }
+
+        public IEnumerable<Student> DohvatiStudente91NoLinq()
+        {
+            List<Student> studenti91 = new List<Student>();
+            foreach (Osoba osoba in Osobe)
+            {
+                if (osoba is Student student && student.DatumRodjenja.Year > 1991)
+                {
+                    studenti91.Add(student);
+                }
+            }
+            return studenti91;
+        }
         
     }
 }
