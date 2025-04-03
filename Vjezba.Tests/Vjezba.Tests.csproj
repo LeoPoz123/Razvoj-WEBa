@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Zadatak_01.cs" />
+    <!--<Compile Remove="Zadatak_01.cs" />-->
     <Compile Remove="Zadatak_02.cs" />
     <Compile Remove="Zadatak_03.cs" />
     <Compile Remove="Zadatak_04.cs" />
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Zadatak_01.cs" />
+    <!--<None Include="Zadatak_01.cs" />-->
     <None Include="Zadatak_02.cs" />
     <None Include="Zadatak_03.cs" />
     <None Include="Zadatak_04.cs" />
@@ -39,9 +39,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
-    <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
