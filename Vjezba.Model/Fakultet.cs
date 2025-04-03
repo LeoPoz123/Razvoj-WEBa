@@ -91,6 +91,11 @@ namespace Vjezba.Model
                             .ThenByDescending(p => p.Ime);
             }
         }
+        public int KolikoProfesoraUZvanju(Zvanje zvanje)
+        {
+            return Osobe.OfType<Profesor>()
+                        .Count(p => p.Zvanje == zvanje);
+        }
         
     }
 }
