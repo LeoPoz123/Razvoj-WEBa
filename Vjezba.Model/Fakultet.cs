@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -107,6 +108,13 @@ namespace Vjezba.Model
             return Osobe.OfType<Profesor>()
                         .Where(p => p.Zvanje == Zvanje.Asistent &&
                                     p.Predmeti.Count(predmet => predmet.ECTS >= minEcts) > x);
+        }
+        public void IzmjeniProfesore(Action<Profesor> action)
+        {
+            foreach (var profesor in Osobe.OfType<Profesor>())
+            {
+                action(profesor);
+            }
         }
         
     }
