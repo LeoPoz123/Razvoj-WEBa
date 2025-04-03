@@ -102,6 +102,12 @@ namespace Vjezba.Model
                         .Where(p => (p.Zvanje == Zvanje.Predavac || p.Zvanje == Zvanje.VisiPredavac)
                                     && p.Predmeti.Count < x);
         }
+        public IEnumerable<Profesor> AktivniAsistenti(int x, int minEcts)
+        {
+            return Osobe.OfType<Profesor>()
+                        .Where(p => p.Zvanje == Zvanje.Asistent &&
+                                    p.Predmeti.Count(predmet => predmet.ECTS >= minEcts) > x);
+        }
         
     }
 }
